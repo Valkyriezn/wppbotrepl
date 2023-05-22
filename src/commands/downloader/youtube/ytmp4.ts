@@ -15,6 +15,6 @@ export default {
         const youtube_id = getYoutubeID(url)
         const result = await youtube(youtube_id, 'mp4')
         await client.sendMessage(msg.from, { image: { url: result.thumbnail }, caption: `${result.title} - ${result.size}` })
-        await client.sendMessage(msg.from, { video: { url: result.link }, mimetype: 'video/mp4' })
+        await client.sendMessage(msg.from, { document: { url: result.link }, mimetype: 'video/mp4' })
     },
 } as ICommand
